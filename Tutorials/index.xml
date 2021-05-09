@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submitter</title>
+    <link>http://comp350spring2021.github.io/Tutorials/</link>
+    <description>Recent content on Submitter</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://comp350spring2021.github.io/Tutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Tutorials/Sams-SSH-Article/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/Sams-SSH-Article/</guid>
+      <description>SSHelling into the VPC through the Bastion     Hopefully this will take some of the guess work out of using SSH to access resources on the VPC through the bastion. I will demonstrate how to add the bastion key with an additional key for some resource in our cloud. Any resource we would like to access will have an associated key and we will need that key to ssh into it.</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub</title>
+      <link>http://comp350spring2021.github.io/Tutorials/Understanding-Git-and-Git-Hub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/Understanding-Git-and-Git-Hub/</guid>
+      <description>Git and GitHub are not the same thing  Git GitHub   Lets Start With the Basics of Git  git init git add git commit, git log git reset, git checkout git revert   git branch  Creating a branch Merging   GitHub  Forking git clone git push       Git and GitHub are not the same thing     First lets get into what git and GitHub are and what the differences are.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Desktop</title>
+      <link>http://comp350spring2021.github.io/Tutorials/GitHub-Desktop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/GitHub-Desktop/</guid>
+      <description>Alexander Tolley
+Link to the google Slides </description>
+    </item>
+    
+  </channel>
+</rss>

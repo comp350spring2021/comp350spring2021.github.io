@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submitter</title>
+    <link>http://comp350spring2021.github.io/</link>
+    <description>Recent content on Submitter</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://comp350spring2021.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Back-End/DockerTest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Back-End/DockerTest/</guid>
+      <description>This will describe how we test the functionality of our custom container and subexecutor script. These tests are to be very basic and treated like unit tests to ensure that we have the functionallity down for deployment and future tests.
+Test Files     The files used for testing are:
+ test.in test.out &amp;lt;MD5&amp;gt;.py  Test 1     We are simulating an event assignment in which the admin wants students to write a python program that takes any number of integers from the command line and sums them together.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Back-End/ExampleSubmissionJSON/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Back-End/ExampleSubmissionJSON/</guid>
+      <description>When a student submits code via the front end web interface, a similar json file is created as shown below, and stored within the s3 bucket.
+{ &amp;quot;submissionid&amp;quot;: &amp;quot;fc55c0190dde2bc413d8d1e79fb8cca2&amp;quot;, &amp;quot;admin&amp;quot;: &amp;quot;m.soltys&amp;quot;, &amp;quot;event&amp;quot;: &amp;quot;aws labs&amp;quot;, &amp;quot;problem&amp;quot;: &amp;quot;lab 5 - containers&amp;quot;, &amp;quot;tokens&amp;quot;: [ &amp;quot;d823640ab3b0f7a4a2bc9fc89661e940&amp;quot;, &amp;quot;240669d4326dea48bba75e066b90b76f&amp;quot;, &amp;quot;4b31d568d86a9350d746c7c2fe9bf5c8&amp;quot; ] } </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Django/models.py/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Django/models.py/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Django/Views.py/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Django/Views.py/</guid>
+      <description>Views within django are how the web server handles a response when a user visits on of the URL&amp;rsquo;s. Each URL for the submitter website has a corresponding view, which can handle, POST or GET requests and respond with an HTML response.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/CreateEvent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/CreateEvent/</guid>
+      <description> Migrate .md file     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/ModifyEvent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/ModifyEvent/</guid>
+      <description> migrate data     </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/StudentSubmit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/StudentSubmit/</guid>
+      <description>Author: Alex Sullivan
+Last Update: 4/4/2021
+A student can submit python source code for an assignment via the front end web interface. Students submit one token for each member in their group. When all tokens are submitted, then they need to be validated.
+Validation refers to making sure that all of the tokens submitted are associated with the same assignment. We allow very free form groups, and dont try to keep track of who is in which group.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Tutorials/Sams-SSH-Article/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/Sams-SSH-Article/</guid>
+      <description>SSHelling into the VPC through the Bastion     Hopefully this will take some of the guess work out of using SSH to access resources on the VPC through the bastion. I will demonstrate how to add the bastion key with an additional key for some resource in our cloud. Any resource we would like to access will have an associated key and we will need that key to ssh into it.</description>
+    </item>
+    
+    <item>
+      <title>Git and GitHub</title>
+      <link>http://comp350spring2021.github.io/Tutorials/Understanding-Git-and-Git-Hub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/Understanding-Git-and-Git-Hub/</guid>
+      <description>Git and GitHub are not the same thing  Git GitHub   Lets Start With the Basics of Git  git init git add git commit, git log git reset, git checkout git revert   git branch  Creating a branch Merging   GitHub  Forking git clone git push       Git and GitHub are not the same thing     First lets get into what git and GitHub are and what the differences are.</description>
+    </item>
+    
+    <item>
+      <title>GitHub Desktop</title>
+      <link>http://comp350spring2021.github.io/Tutorials/GitHub-Desktop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Tutorials/GitHub-Desktop/</guid>
+      <description>Alexander Tolley
+Link to the google Slides </description>
+    </item>
+    
+  </channel>
+</rss>
