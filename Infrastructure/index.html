@@ -508,7 +508,11 @@
             <li>
             
             
-                <span class="flex">Infrastructure</span>
+                <span class="flex">
+                    <a href="/Infrastructure/" class="gdoc-nav__entry is-active">
+                        Infrastructure
+                    </a>
+                </span>
             
             
 
@@ -624,6 +628,872 @@
     <article class="gdoc-markdown">
         <h1>Infrastructure</h1>
         
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="aws-infrastructure-doc">
+        AWS Infrastructure Doc
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#aws-infrastructure-doc" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor AWS Infrastructure Doc" href="#aws-infrastructure-doc">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+
+
+
+  <div class="gdoc-toc gdoc-toc__level--3"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#aws-infrastructure-doc">AWS Infrastructure Doc</a></li>
+    <li><a href="#compute">Compute</a>
+      <ul>
+        <li><a href="#ec2">EC2</a>
+          <ul>
+            <li><a href="#ami">AMI</a></li>
+            <li><a href="#lambda-function--">Lambda Function -</a></li>
+            <li><a href="#relational-database-service--">Relational Database Service -</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#networking">Networking</a>
+      <ul>
+        <li><a href="#vpc">VPC</a></li>
+        <li><a href="#subnet-configuration">Subnet Configuration</a></li>
+        <li><a href="#internet-gateway">Internet Gateway</a></li>
+        <li><a href="#nat-gateway">NAT Gateway</a></li>
+        <li><a href="#load-balancer">Load Balancer</a></li>
+      </ul>
+    </li>
+    <li><a href="#security-group-communication">Security Group Communication</a></li>
+    <li><a href="#sqs">SQS</a></li>
+    <li><a href="#ses">SES</a></li>
+    <li><a href="#s3">S3</a></li>
+    <li><a href="#iam">IAM</a></li>
+    <li><a href="#cloud-formation">Cloud Formation</a></li>
+  </ul>
+</nav><hr></div>
+
+
+<p><img src="/infrastructure/infrastructureDiagram.png" alt="should be a pic here"  />
+</p>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="compute">
+        Compute
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#compute" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Compute" href="#compute">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<hr>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="ec2">
+        EC2
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#ec2" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor EC2" href="#ec2">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="aa7e7cfe-1">
+    <span>Names of Current EC2 instances</span>
+    <span>↕</span>
+  </label>
+  <input id="aa7e7cfe-1" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>Web Server</li>
+<li>App Server</li>
+<li>Bastion Host</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h3 id="ami">
+        AMI
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#ami" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor AMI" href="#ami">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h3>
+</div>
+
+<p><strong>Author:</strong> Arthur Hui
+AMIs are snapshot of the instances at that very moment in time. They contain all of the files that exist in the instance at that very moment. All operating system updates, installed libraries, and stuff will be there when it is recreated and turned into an EC2 instance.</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="529de23f-2">
+    <span>AMIs</span>
+    <span>↕</span>
+  </label>
+  <input id="529de23f-2" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>App Server AMI: Has docker, MySQL, and python installed on it.</li>
+<li>Web Server AMI: Has MySQL, python, Django, and apache installed. There are<br>
+also html and python files to host the actual website.</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h3 id="lambda-function--">
+        Lambda Function -
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#lambda-function--" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Lambda Function -" href="#lambda-function--">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h3>
+</div>
+
+<p><strong>Author:</strong> Edgar Ramirez</p>
+<ul>
+<li>The AWS Lambda service creates what&rsquo;s called Lambda functions which help in calling code after a certain event has occured in the application. The code can also call other AWS services, such as a load balancer, SQS or SNS, EC2, or S3 Bucket.
+<ul>
+<li>
+<p>Our Lambda function gets triggers when AWS receives an object in the S3 bucket (an object storage service), in this case when admin creates a new event through the webpage.</p>
+<ul>
+<li>When the event gets creates the information entered by the user gets saved into a JSON file and saved onto the S3 Bucket.</li>
+</ul>
+<p><img src="/infrastructure/InfrastructureDiagram2.png" alt=""  />
+</p>
+<ul>
+<li>The Lambda function, now triggered, will run code (Python) to call AWS SQS (Simple Queue Service, sends messages)
+<ul>
+<li>It will query a list of emails (from RDS, AWS Relational Database Service) of the students that will be participating in the assignment.</li>
+<li>Will email the list of students their submission tokens for the assignment.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h3 id="relational-database-service--">
+        Relational Database Service -
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#relational-database-service--" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Relational Database Service -" href="#relational-database-service--">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h3>
+</div>
+
+<p><strong>Author:</strong> Arthur Hui</p>
+<p>Amazon Relational Database Service is how we are storing information that the front end and back end need to access. The database use MySQL to handle queries, updates, deletions, and creation of data inside the it.</p>
+<ul>
+<li>Here is the Entity Relation Diagram. Shows what fields that each entity has associated to it and how they associated with one another.</li>
+</ul>
+<p><img src="/infrastructure/RDS-ERD.png" alt=""  />
+</p>
+<ul>
+<li>
+<p>Steps to connect to the RDS from the instance</p>
+<ol>
+<li>Find the user name of the RDS you want to connect to</li>
+<li>Find the password for the RDS you want to connect to</li>
+<li>Get the endpoint of the RDS you want to connect to</li>
+<li>Use the command below to access the database.
+<ul>
+<li>Replace the #### with the RDS endpoint and $$$$ with the user name of the RDS</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mysql -h <span class="c1">####### -P 3306 -u $$$$$$ -p</span>
+</code></pre></div></li>
+</ul>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="networking">
+        Networking
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#networking" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Networking" href="#networking">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<hr>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="vpc">
+        VPC
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#vpc" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor VPC" href="#vpc">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="bdfc700b-3">
+    <span>VPC configuration</span>
+    <span>↕</span>
+  </label>
+  <input id="bdfc700b-3" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>CIDR-10.0.0.0/16</li>
+<li>Virtual Private Cloud Will encapsulate the following resources
+<ul>
+<li>Public Subnet</li>
+<li>Private Subnet</li>
+<li>Internet Gateway</li>
+<li>Nat Gateway</li>
+<li>Public Route table: Associated with IG</li>
+<li>Private Route table: Associated with Nat Gateway</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="subnet-configuration">
+        Subnet Configuration
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#subnet-configuration" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Subnet Configuration" href="#subnet-configuration">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+<p><strong>Author:</strong> Jose Cahue</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="8581b772-4">
+    <span>Public Subnet</span>
+    <span>↕</span>
+  </label>
+  <input id="8581b772-4" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>CIDR- 10.0.0.0/24</li>
+<li>Public to the public internet</li>
+<li>Will encasulate the following resources
+<ul>
+<li>Bastion Host- Manages access to Web server</li>
+<li>Web Server- Responsible for hosting website</li>
+<li>Nat Instance-Responsible for forwarding traffic to App server.</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="623b9e80-5">
+    <span>Private Subnet</span>
+    <span>↕</span>
+  </label>
+  <input id="623b9e80-5" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>CIDR- 10.0.0.0/24</li>
+<li>Will encapsulate the following resources
+<ul>
+<li>App Server-Responsible for back end logic processing</li>
+<li>Docker deamon-Service used to decouple diffrent process functionality</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="internet-gateway">
+        Internet Gateway
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#internet-gateway" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Internet Gateway" href="#internet-gateway">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+<p><strong>Author</strong>: Jose Cahue</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="4eceadb4-6">
+    <span>Role</span>
+    <span>↕</span>
+  </label>
+  <input id="4eceadb4-6" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    -Responsible for public internet access into the VPC
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="nat-gateway">
+        NAT Gateway
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#nat-gateway" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor NAT Gateway" href="#nat-gateway">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+<p><strong>Author:</strong> Jose Cahue</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="e61e55e0-7">
+    <span>Role</span>
+    <span>↕</span>
+  </label>
+  <input id="e61e55e0-7" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    -Responsible for managing communication internal VPC data traffice to our private subnet resources
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h2 id="load-balancer">
+        Load Balancer
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#load-balancer" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Load Balancer" href="#load-balancer">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h2>
+</div>
+
+<p><strong>Author:</strong> Edgar Ramirez</p>
+<ul>
+<li>The AWS Load Balancer spreads out application traffic to various items such as EC2 instances. (EC2 instances, containters, IP Addresses, Lambda functions, and etc.)
+<ul>
+<li>Single or Multiple Availability Zones
+<ul>
+<li>The application can choose to reroute the overflow of traffic to just one or multiple availability zones or a section of the globe that provides resources, computing or storage or both for the application.</li>
+<li>This project has two load balancers
+<ul>
+<li>Both use multiple availability zones
+<ul>
+<li>US-East-1a (Virginia)</li>
+<li>US-East-1b (Virginia)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="security-group-communication">
+        Security Group Communication
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#security-group-communication" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Security Group Communication" href="#security-group-communication">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<hr>
+<p><strong>Author:</strong> Arthur Hui</p>
+<p>The security groups allows for network communication between the instances, RDS, and the internet. Each security group should be explicitly name to avoid confusion. Here are the security groups that are being used in our infrastructure.</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="fe2f7eb4-8">
+    <span>Security Groups</span>
+    <span>↕</span>
+  </label>
+  <input id="fe2f7eb4-8" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>Bastion Host SG
+<ul>
+<li>Description: allow ssh into bastion host</li>
+<li>Inbound rule: ssh on port 22 with source 0.0.0.0/0</li>
+<li>Outbound rule: All traffic on all ports with 0.0.0.0/0</li>
+</ul>
+</li>
+<li>Web Server SG
+<ul>
+<li>Description: allow ssh from bastion host into Web Server and people to view the sight</li>
+<li>Inbound rules
+<ul>
+<li>Type ssh on port 22 with the source being the Bastion Host SG</li>
+<li>Type HTTP on port 80 with source being 0.0.0.0/0 and ::/0</li>
+<li>Type HTTPs on port 443 with source being 0.0.0.0/0 and ::/0</li>
+<li>Type custom tcp on port  8000 with source being 0.0.0.0/0</li>
+</ul>
+</li>
+<li>Outbound rule: All traffic on all ports with 0.0.0.0/0</li>
+</ul>
+</li>
+<li>App Server SG
+<ul>
+<li>Description: allow ssh from bastion host into App Server</li>
+<li>Inbound Rules
+<ul>
+<li>Type ssh on port 22 with the source being the Bastion Host SG</li>
+<li>Type MYSQL/Aurora on port 3306 with source being 0.0.0.0/0</li>
+</ul>
+</li>
+<li>Outbound rule: All traffic on all ports with 0.0.0.0/0</li>
+</ul>
+</li>
+<li>RDS_SG
+<ul>
+<li>Description: allow RDS to be accessed by app and web server</li>
+<li>Inbound rule: MYSQL/Aurora on port 3306 with source being 10.0.0.0/16</li>
+<li>Outbound rule: All traffic on all ports with 0.0.0.0/0</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="sqs">
+        SQS
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#sqs" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor SQS" href="#sqs">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p><strong>Author:</strong> Zhili Wang</p>
+<p>Amazon Simple queue service (SQS) is a fully managed message queue service for communicating between distributed systems and microservices at any scale. SQS makes it simple to decouple the application component so it can run and fail independently. This allows users to build an application that is fault tolerant and easy to scale.</p>
+<hr>
+<p>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="c2666c8f-9">
+    <span>Queues</span>
+    <span>↕</span>
+  </label>
+  <input id="c2666c8f-9" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    We have two standard SQS Queues, both are trigger by the Lamda function base on its invocation condition.
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="087a88c1-10">
+    <span>Queue type</span>
+    <span>↕</span>
+  </label>
+  <input id="087a88c1-10" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    We used the standard Queue for simplicity because the order of the message is not important.
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="c30c6032-11">
+    <span>Queue Details</span>
+    <span>↕</span>
+  </label>
+  <input id="c30c6032-11" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    Our queue accept data size between 1 to 256 kb, and the message retention
+period is 4 days. There is a 10-second delay on delivery and receive wait
+time.
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="adc83b19-12">
+    <span>Queue Usage</span>
+    <span>↕</span>
+  </label>
+  <input id="adc83b19-12" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    
+  </div>
+</div>
+</p>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="ses">
+        SES
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#ses" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor SES" href="#ses">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p><strong>Author:</strong> Elijah Clark</p>
+<hr>
+<p>Simple Email Service is used to send out emails via AWS. Allows for emails to be sent to verified emails from AWS console. And if SES setting for sandbox mode is set to off then one may send out emails to unverified emails..</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="43aa2c84-13">
+    <span>Prerequisites</span>
+    <span>↕</span>
+  </label>
+  <input id="43aa2c84-13" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>
+<p>DOMAIN</p>
+<p>A domain must be set up either with AWS route 53. Or created using a 3rd party Domain service.
+Using route 53 is well documented, thus follow documentation if going with AWS made domain.</p>
+</li>
+<li>
+<p>EMAIL</p>
+<p>An email can be verified inside of SES console under Identity management, and simply clicking
+Verify a new email address one may enter an email that they want to send emails from or to.</p>
+</li>
+<li>
+<p>aws_access_id &amp; aws_secret_access_key</p>
+<p>AWS has this well documented, must have admin generate and give these values.</p>
+</li>
+<li>
+<p>Toggle Sandbox mode off</p>
+<p>By going to SES console, under the sending statistics tab one may click edit your account details
+to enable production access, fill in the rest of the needed information and submit for review. Wait
+for verification to finish. Once done with the review one can finally send emails via code to unverified emails.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="016ed6b6-14">
+    <span>Components</span>
+    <span>↕</span>
+  </label>
+  <input id="016ed6b6-14" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>
+<p>Region</p>
+<p>Using AWS region format, example: &ldquo;us-east-1&rdquo;. Is used to set region currently being used
+for by AWS service.</p>
+</li>
+<li>
+<p>Domain</p>
+<p>Domain that was from prerequisites is used as input during use of constructor or simply a call to
+the domain setter prior to use of method to send emails via domain.</p>
+</li>
+<li>
+<p>Recipient</p>
+<p>Email that was from prerequisites is used as input during use of constructor or simply a call to
+the recipient setter prior to use of method to send emails via domain
+Once outside of sandbox mode
+SES can send emails out to unverified emails, thus sending emails to any address that is valid.</p>
+</li>
+<li>
+<p>Subject</p>
+<p>Simply a string  for setting subject of email</p>
+</li>
+<li>
+<p>Body_text</p>
+<p>Simply a string input for body of text for body of email.</p>
+</li>
+<li>
+<p>Body_html</p>
+<p>Must have correct formatting and be correct HTML otherwise it will not work. Recommend testing html
+separate before  passing it in as a string. All html must be passed as a string.</p>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="9c3f043e-15">
+    <span>USE</span>
+    <span>↕</span>
+  </label>
+  <input id="9c3f043e-15" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <p>Import <a class="gdoc-markdown__link" href="http://ses.py">SES.py</a>
+ into another PY file.</p>
+<p>Once imported make a call to constructor and use setters from <a class="gdoc-markdown__link" href="http://ses.py">SES.py</a>
+ to set the values
+for domain, region, recipient, html, and subject. Once all needed information is there to
+make up to totality of the email. simply call method send email with domain which will use provided
+information to send email out.</p>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="s3">
+        S3
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#s3" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor S3" href="#s3">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p><strong>Author:</strong> Zhili Wang</p>
+<hr>
+<p>Amazon Simple Storage Service (S3) is a cloud storage that offers scalability, data availability, security, and performance. It has a simple web service interface that can be used to store and retrieve any amount of data at any time from anywhere. The S3 bucket is also cost-effective and very reliable in terms of preventing data loss.</p>
+<p>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="f8c3baca-16">
+    <span>Property</span>
+    <span>↕</span>
+  </label>
+  <input id="f8c3baca-16" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    The bucket region is us-east-1, and the event notification destination is our lambda function (Submitter_ Trigger).
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="6e90bef0-17">
+    <span>Permission</span>
+    <span>↕</span>
+  </label>
+  <input id="6e90bef0-17" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    We use Identity and Access Management (IAM) and bucket policy to control the permission of the S3 bucket
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="4525c09a-18">
+    <span>Usage</span>
+    <span>↕</span>
+  </label>
+  <input id="4525c09a-18" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    Our s3 bucket can send a notification to the lambda function and retrieve user input (JSON File) from it. We can also upload the item to the bucket using Amazon SDK
+  </div>
+</div>
+</p>
+<p>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="6c2fc821-19">
+    <span>Management</span>
+    <span>↕</span>
+  </label>
+  <input id="6c2fc821-19" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    We don&rsquo;t have any rules for bucket management at the moment. We thought about making a lifecycle rule so it can transition objects to archive or delete the infrequent access data when they are no longer need it, but it&rsquo;s not necessary with the current build of the project.
+  </div>
+</div>
+
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="625b7504-20">
+    <span>Storage</span>
+    <span>↕</span>
+  </label>
+  <input id="625b7504-20" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    Back end will explain how the objects are being stored in the S3
+  </div>
+</div>
+</p>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="iam">
+        IAM
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#iam" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor IAM" href="#iam">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p><strong>Author:</strong> Arthur Hui</p>
+<hr>
+<p>Identity and access management is useful for allowing multiple people access to the same AWS account. Each new IAM user must have certain polices attached to the user for accessing AWS resources. The owner can also put multiple users in a group and attach polices to said group to make IAM management easier.</p>
+<p>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="5290bc2b-21">
+    <span>IAM naming examples</span>
+    <span>↕</span>
+  </label>
+  <input id="5290bc2b-21" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="68392939-0">
+    <span>First Names (using common names as an example)</span>
+    <span>↕</span>
+  </label>
+  <input id="68392939-0" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>Cameron</li>
+<li>Kim</li>
+<li>Derek</li>
+<li>Bob</li>
+</ul>
+  </div>
+</div>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="8a5f92ef-1">
+    <span>A specific user names</span>
+    <span>↕</span>
+  </label>
+  <input id="8a5f92ef-1" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>Comp350ProjectLeader</li>
+<li>FrontEnd213</li>
+<li>BackEnd456</li>
+<li>Infrastructure805</li>
+</ul>
+  </div>
+</div>
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="9cde3738-2">
+    <span>Group naming</span>
+    <span>↕</span>
+  </label>
+  <input id="9cde3738-2" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <pre><code>- front-end-team
+- back-end-team
+- infrastructure-team
+</code></pre>
+  </div>
+</div>
+
+  </div>
+</div>
+
+Roles are useful to allow certain resources to interact with each other like S3 to SQS and SQS to EC2 as an example. It also makes sure that these resources can only access those specific resources.</p>
+
+<div class="gdoc-expand">
+  <label class="gdoc-expand__head flex justify-between" for="ca92567f-22">
+    <span>Existing Roles</span>
+    <span>↕</span>
+  </label>
+  <input id="ca92567f-22" type="checkbox" class="gdoc-expand__control hidden" />
+  <div class="gdoc-markdown--nested gdoc-expand__content">
+    <ul>
+<li>
+<p>Submitter_lambda_role</p>
+<p>allows the lambda function to get a objects from S3 and put a message on the SQS</p>
+</li>
+<li>
+<p>ReadS3Bucket</p>
+<p>allows reading from the S3 bucket, SQS, and executing the SQS</p>
+</li>
+<li>
+<p>rds-monitoring-role</p>
+<ul>
+<li>does what it says, monitors the relation database service</li>
+</ul>
+</li>
+<li>
+<p>backend_queueaccess_role</p>
+<ul>
+<li>allows the back app server to receive, delete, and get attribute from the SQS</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="cloud-formation">
+        Cloud Formation
+        <a data-clipboard-text="http://comp350spring2021.github.io/Infrastructure/#cloud-formation" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Cloud Formation" href="#cloud-formation">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p><strong>Author:</strong> Daniel Thai</p>
+<hr>
+<p>A service that helps users model and set up AWS resources for them to focus on their applications that run in AWS. Users could create a template that&rsquo;ll describe all the AWS resources that they want to use and Cloud Formation will take care of provisioning and configuring the resources for the users.</p>
+<ul>
+<li>
+<p>Creating the template</p>
+<ul>
+<li>
+<p>Set up and log into your AWS account</p>
+<p>Sign in to the Console</p>
+</li>
+<li>
+<p>Define Access Controls</p>
+<p>Set up the access with AWS Identity</p>
+</li>
+<li>
+<p>Deploy your first collection of resources</p>
+<p>Create and deploy your first Cloud Formation template</p>
+</li>
+</ul>
+</li>
+<li>
+<p>YAML file template reference</p>
+<p>Usage:<br>
+Submitter Networking Enviroment and Resources</p>
+<p>This template will:</p>
+<ul>
+<li>Create a VPC with:
+<ul>
+<li>2 Public Subnets</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>YAML file template</p>
+</li>
+</ul>
+<pre><code>    Resources:
+      SubmitterVPC:
+        Type: 'AWS::EC2::VPC'
+        Properties:
+          CidrBlock: 10.0.0.0/16
+        Metadata:
+</code></pre>
 
     </article>
 
