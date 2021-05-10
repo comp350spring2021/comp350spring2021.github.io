@@ -63,6 +63,14 @@
             <aside class="gdoc-nav">
                 <nav>
     
+    <div class="gdoc-search">
+        <svg class="icon search"><use xlink:href="#search"></use></svg>
+        <input type="text" id="gdoc-search-input" class="gdoc-search__input" placeholder="Search..."
+            aria-label="Search" maxlength="64" />
+        <div class="gdoc-search__spinner spinner hidden"></div>
+        <ul id="gdoc-search-results" class="gdoc-search__list"></ul>
+    </div>
+
 
 
     <section class="gdoc-nav--main">
@@ -671,10 +679,42 @@
 
 
 <div class="gdoc-page__header flex flex-wrap
-     justify-end 
-     hidden-mobile 
-     hidden " itemprop="breadcrumb">
+     justify-between 
     
+    " itemprop="breadcrumb">
+    
+    <div>
+        <svg class="icon path hidden-mobile"><use xlink:href="#path"></use></svg>
+        <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+            
+            
+            
+            
+    
+    
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Front End</span><meta itemprop='position' content='2' /></li>
+    
+
+    
+
+        </ol>
+    </div>
+    
+    
+    <div>
+        <span class="editpage">
+            <svg class="icon code"><use xlink:href="#code"></use></svg>
+            <a href="https://github.com/comp350spring2021/websiteRepo/tree/master/content/Front-End/_index.md">
+                Edit this page
+            </a>
+        </span>
+    </div>
     
 </div>
 
@@ -724,6 +764,12 @@
     </div>
 
     
+
+
+
+
+<script defer src="/js/en.search.min.076a7ab50dbb2725c8d7e02f9db30ff26f5e8e396ef2c29626b9853954af0a90.js"></script>
+
 
 
 <script defer src="/js/clipboard-af8ab36589.min.js"></script>
