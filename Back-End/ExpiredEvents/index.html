@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Future Features">
+<meta name="description" content="Expired Events">
 
-<title>Future Features | Submitter Documentation</title>
+<title>Expired Events | Submitter Documentation</title>
 
 <link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
 
@@ -31,7 +31,6 @@
 <link rel="preload" href="/custom.css" as="style">
 <link rel="stylesheet" href="/custom.css" media="all">
 
-<link rel="alternate" type="application/rss+xml" href="http://comp350spring2021.github.io/FutureFeatures/index.xml" title="Submitter Documentation" />
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
 </head>
@@ -531,7 +530,7 @@
 
             <li>
             
-            <input type="checkbox" id="navtree-4da72e46" class="gdoc-nav__toggle" >
+            <input type="checkbox" id="navtree-4da72e46" class="gdoc-nav__toggle" checked>
             <label for="navtree-4da72e46" class="flex justify-between">
             
             
@@ -615,7 +614,7 @@
             
             
                 <span class="flex">
-                    <a href="/Back-End/ExpiredEvents/" class="gdoc-nav__entry ">
+                    <a href="/Back-End/ExpiredEvents/" class="gdoc-nav__entry is-active">
                         Expired Events
                     </a>
                 </span>
@@ -674,7 +673,7 @@
             
             
                 <span class="flex">
-                    <a href="/FutureFeatures/" class="gdoc-nav__entry is-active">
+                    <a href="/FutureFeatures/" class="gdoc-nav__entry ">
                         Future Features
                     </a>
                 </span>
@@ -811,7 +810,15 @@
         
     
     
-        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Future Features</span><meta itemprop='position' content='2' /></li>
+        
+        
+        
+        
+    
+    
+        <li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/' href='/'><span itemprop='name'></span></a><meta itemprop='position' content='1' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><a itemscope itemtype='https://schema.org/WebPage' itemprop='item' itemid='/Back-End/' href='/Back-End/'><span itemprop='name'>Back End</span></a><meta itemprop='position' content='2' /></li><li> / </li><li itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'><span itemprop='name'>Expired Events</span><meta itemprop='position' content='3' /></li>
+    
+
     
 
     
@@ -823,7 +830,7 @@
     <div>
         <span class="editpage">
             <svg class="icon code"><use xlink:href="#code"></use></svg>
-            <a href="https://github.com/comp350spring2021/websiteRepo/tree/master/content/FutureFeatures/_index.md">
+            <a href="https://github.com/comp350spring2021/websiteRepo/tree/master/content/Back-End/ExpiredEvents.md">
                 Edit this page
             </a>
         </span>
@@ -831,66 +838,113 @@
     
 </div>
 
+
     <article class="gdoc-markdown">
-        <h1>Future Features</h1>
+        <h1>Expired Events</h1>
         
 
 
 <div class="gdoc-page__anchorwrap">
-    <h1 id="tasks-for-next-class">
-        Tasks for Next Class
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#tasks-for-next-class" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Tasks for Next Class" href="#tasks-for-next-class">
+    <h1 id="how-the-back-end-takes-care-of-expired-events">
+        How the back end takes care of expired events
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#how-the-back-end-takes-care-of-expired-events" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor How the back end takes care of expired events" href="#how-the-back-end-takes-care-of-expired-events">
             <svg class="icon link"><use xlink:href="#link"></use></svg>
         </a>
     </h1>
 </div>
 
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h2 id="infrastructure">
-        Infrastructure
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#infrastructure" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Infrastructure" href="#infrastructure">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h2>
-</div>
-
-<hr>
-<p><strong>Author:</strong> Jose Cahue<br>
-<strong>Last Updated:</strong> May 2021</p>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="nat-instance">
-        NAT instance
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#nat-instance" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor NAT instance" href="#nat-instance">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
+<p><strong>Author:</strong> Rene Escamilla
+<strong>Last Update:</strong> May 2021</p>
+<p>It begins in the front end&hellip;</p>
+<p>When an admin creates an event a <code>.json</code> file is generated and uploaded to the database. Each json file will contain the following:</p>
 <ul>
-<li>Task: Convernt to Nat Instance from Nat Gateway. This would make the infrastructure more cost effective.</li>
+<li>eventID: A string identifier that is the name of the event.</li>
+<li>assignmentName: A string identifier that is the name of the assignment.</li>
+<li>startDate: A date that signifies the start date of the event.</li>
+<li>endDate: A date that signifies the end date of the event.</li>
+<li>maxTeamSize: A number that sets the max number of people in a team for the event.</li>
 </ul>
+<p>This is an example of a json file that was created by the admin on event creation</p>
+<pre><code>{
+  &quot;eventID&quot;: &quot;aws_labs&quot;,
+  &quot;assignmentName&quot;: &quot;lab5_containers&quot;,
+  &quot;startDate&quot;: &quot;2021-04-06&quot;,
+  &quot;endDate&quot;: &quot;2021-04-14&quot;,
+  &quot;maxTeamSize&quot;: &quot;4&quot;
+}
+</code></pre><p>At this point the event has been created and submissions are allowed on the day of the start date.
+Submissions before the end date will be processed using the test cases.
+Submissions after the end date will be processed using the grade cases, which will then record the results to the database.
+By the end date all submissions should be uploaded to the S3 bucket which will allow us to process all expired events.</p>
 
 
 
 <div class="gdoc-page__anchorwrap">
-    <h3 id="api-gateway">
-        API Gateway
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#api-gateway" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor API Gateway" href="#api-gateway">
+    <h1 id="how-expired-events-are-triggered">
+        How expired events are triggered
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#how-expired-events-are-triggered" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor How expired events are triggered" href="#how-expired-events-are-triggered">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p>Every day at midnight we trigger <em>runExpiredEvents.py</em> using Crontab on Linux. This allows us to process all expired events of the previous date.</p>
+<p>The following is the current cronjob format:</p>
+<pre><code>0 0 * * * /executables/runExpiredEvents.py
+</code></pre>
+
+
+<div class="gdoc-page__anchorwrap">
+    <h1 id="processing-expired-events">
+        Processing Expired Events
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#processing-expired-events" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Processing Expired Events" href="#processing-expired-events">
+            <svg class="icon link"><use xlink:href="#link"></use></svg>
+        </a>
+    </h1>
+</div>
+
+<p>When the back end&rsquo;s <em>runExpiredEvents.py</em> is triggered it process all expired events from the database.
+The master thread queries the database using the previous day and puts all the events that were expired into a list.
+Each event from the list will spawn a client thread with the event passed into its constructor.
+Then the master thread calls <code>start()</code> on this client thread, which then calls the class method <code>run()</code> defined in the EventThread class.</p>
+
+
+
+<div class="gdoc-page__anchorwrap">
+    <h3 id="client-thread">
+        Client Thread
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#client-thread" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Client Thread" href="#client-thread">
             <svg class="icon link"><use xlink:href="#link"></use></svg>
         </a>
     </h3>
 </div>
 
+<p>When the client thread&rsquo;s constructor executes, it populates all instance variables.
+The entry point for all client thread&rsquo;s is <code>run()</code>.
+Since each event may have several assignments and submissions it must accommodate for that.</p>
 <ul>
-<li>Task: Implement API gateways to stream line communicaton between components.
+<li>Runs a nested loop; one for processing all assignments and the other to process all submissions</li>
+<li>The outer loop must get a list of all the submissions associated with the assignment
 <ul>
-<li>See how API Gateways could simplify and make the project more efficient.</li>
+<li><code>submissions/m.soltys/aws_labs/lab5_containers/</code></li>
+</ul>
+</li>
+<li>The inner loop will then process each submission
+<ul>
+<li><code>/submissions/m.soltys/aws_labs/lab5_containers/fc55c0190dde2bc413d8d1e79fb8cca2/</code></li>
+</ul>
+</li>
+<li>Creates a directory using the submission id from each submission
+<ul>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/</code></li>
+</ul>
+</li>
+<li>Changes present working directory into newly created working directory, then retrieves all the files from the S3 bucket
+<ul>
+<li><code>/home/ec2-user/submitter/fc55c0190dde2bc413d8d1e79fb8cca2/fc55c0190dde2bc413d8d1e79fb8cca2.json</code></li>
+<li><code>/home/ec2-user/submitter/fc55c0190dde2bc413d8d1e79fb8cca2/fc55c0190dde2bc413d8d1e79fb8cca2.py</code></li>
+<li><code>/home/ec2-user/submitter/fc55c0190dde2bc413d8d1e79fb8cca2/grade.in</code></li>
+<li><code>/home/ec2-user/submitter/fc55c0190dde2bc413d8d1e79fb8cca2/grade.out</code></li>
 </ul>
 </li>
 </ul>
@@ -898,165 +952,59 @@
 
 
 <div class="gdoc-page__anchorwrap">
-    <h3 id="aws-auto-scaling">
-        AWS Auto Scaling
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#aws-auto-scaling" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor AWS Auto Scaling" href="#aws-auto-scaling">
+    <h3 id="execute-submitted-code-in-python-39-container">
+        Execute submitted code in Python 3.9 container
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#execute-submitted-code-in-python-39-container" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Execute submitted code in Python 3.9 container" href="#execute-submitted-code-in-python-39-container">
             <svg class="icon link"><use xlink:href="#link"></use></svg>
         </a>
     </h3>
 </div>
 
+<p>At this point we have the code to execute, the inputs to run, and the appropriate outputs for comparison.
+We are using a python 3 docker image with a custom, executable script <code>executeSubmission.py</code> installed that will execute the submitted code against all provided inputs from <code>grade.in</code>, and generating the output file.
+Our script will now:</p>
 <ul>
-<li>Task: Implement Auto Scaling in order to prepare for possible production level deployment.</li>
-</ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="security-groups">
-        Security Groups
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#security-groups" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Security Groups" href="#security-groups">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
+<li>Create a new thread that will in turn execute the appropriate docker run command.
 <ul>
-<li>Task: Clean up and document for more clarity in Secury groups for all resources
-<ul>
-<li>Inbound/ Oubound rules</li>
-<li>resource access rules</li>
+<li><code>docker run -it --rm --name=&quot;subidfc55c0190dde2bc413d8d1e79fb8cca2&quot; -v &quot;$PWD&quot;:/usr/src/submitter -w /usr/src/submitter python:3.9 executeSubmission.py fc55c0190dde2bc413d8d1e79fb8cca2</code></li>
 </ul>
 </li>
 </ul>
+<p>This will spin up our container and keep it alive until it finishes executing.
+The present working directory gets bind-mounted to a newly created directory in the container <code>/usr/src/submitter</code>.
+Since the default for bind mount is read-write, this allows our script in the container to generate an output that can be read by our main thread.</p>
 
 
 
 <div class="gdoc-page__anchorwrap">
-    <h2 id="front-end">
-        Front End
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#front-end" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Front End" href="#front-end">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h2>
-</div>
-
-<hr>
-<p><strong>Author:</strong> Juan Zarate<br>
-<strong>Last Updated:</strong> May 2021</p>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="ui-improvement">
-        UI Improvement
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#ui-improvement" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor UI Improvement" href="#ui-improvement">
+    <h3 id="record-results-to-the-database-and-clean-house">
+        Record results to the database and clean house
+        <a data-clipboard-text="http://comp350spring2021.github.io/Back-End/ExpiredEvents/#record-results-to-the-database-and-clean-house" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Record results to the database and clean house" href="#record-results-to-the-database-and-clean-house">
             <svg class="icon link"><use xlink:href="#link"></use></svg>
         </a>
     </h3>
 </div>
 
+<p>Now that the container has finished executing, our script&rsquo;s current directory should contain:</p>
 <ul>
-<li>Task: Make the webpages more fluid and smooth.</li>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/fc55c0190dde2bc413d8d1e79fb8cca2.json</code></li>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/fc55c0190dde2bc413d8d1e79fb8cca2.py</code></li>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/grade.in</code></li>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/grade.out</code></li>
+<li><code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/fc55c0190dde2bc413d8d1e79fb8cca2.out</code></li>
 </ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="logout-button">
-        Logout Button
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#logout-button" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Logout Button" href="#logout-button">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
+<p>Our script will now:</p>
 <ul>
-<li>Task: We had one as a web page but add one so it&rsquo;s just a button on the top right corner of each page on the admins side.</li>
+<li>Open the newly generated file <code>fc55c0190dde2bc413d8d1e79fb8cca2.out</code> and sends the results to the database according to the submission id.</li>
+<li>Changes working directories up to the root</li>
+<li>Deletes the directory <code>/home/ec2-user/fc55c0190dde2bc413d8d1e79fb8cca2/</code></li>
 </ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="admin-registration">
-        Admin Registration
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#admin-registration" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Admin Registration" href="#admin-registration">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
-<ul>
-<li>Task: We had a web page for this but we removed it. Implement one so that multiple admins could register.</li>
-</ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="server-host">
-        Server Host
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#server-host" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Server Host" href="#server-host">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
-<ul>
-<li>Task: We currently have it set to port 8000 but it needs to be set to <a class="gdoc-markdown__link" href="http://www.csuci-submitter.com/">www.csuci-submitter.com</a>
-</li>
-</ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h2 id="back-end">
-        Back End
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#back-end" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Back End" href="#back-end">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h2>
-</div>
-
-<hr>
-<p><strong>Author:</strong> Sam Mazarei
-<strong>Last Updated:</strong> May 2021</p>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="next-for-processstudenttestcasepy">
-        Next for <code>processStudentTestCase.py</code>
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#next-for-processstudenttestcasepy" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Next for processStudentTestCase.py" href="#next-for-processstudenttestcasepy">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
-<p>At the end of the semester we added a small feature that uploads the output file generated by the subexecutor container to the S3 bucket in the same directory as the rest of the submission files.</p>
-<p>The next team that takes on this project will need to debug the functionality of the <code>processStudentTestCases.py</code> script from the uploading of the results to the S3 bucket to the end. The functionality that needs debugging includes:</p>
-<ul>
-<li>Uploading submission results csv file to S3 bucket.</li>
-<li>Retrieving the student emails associated with the student tokens of the submission from the RDS MySql database.</li>
-<li>Emailing the submission results to each student in submission using SES.</li>
-<li>Cleaning up the local directory - removing files in the <code>~/submission/&lt;subid&gt;/</code> directory, and then <code>.../&lt;subid&gt;/</code> itself.</li>
-<li>Using the message receipt handle to delete the message from the SQS queue.</li>
-<li>Please, so not forget to set the appropriate visibility window.</li>
-</ul>
-
-
-
-<div class="gdoc-page__anchorwrap">
-    <h3 id="back-end-redesign-considerations">
-        Back-end redesign considerations
-        <a data-clipboard-text="http://comp350spring2021.github.io/FutureFeatures/#back-end-redesign-considerations" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Back-end redesign considerations" href="#back-end-redesign-considerations">
-            <svg class="icon link"><use xlink:href="#link"></use></svg>
-        </a>
-    </h3>
-</div>
-
-<p><strong>Any future team considering taking on this project  may want to consider a server-less approach.</strong></p>
-<p>Instead of the lambda triggering and placing a message on the SQS queue, consider rewriting the script that executes inside of the subexecutor container so that the lambda function runs the subexecutor image, passing to it the subid (extracted from the key of the object that triggered the lambda to begin with), and the subexecutor container can download the necessary files from the S3 bucket, execute the submission, and then upload the results to the bucket and email students.</p>
-<p>This approach would further decouple the architecture remove the need for the SQS queue.</p>
+<p>Finally the script is now done with the current submission from the list of submissions.
+The next submission will then be processed.
+Once all submissions are done processing it will move on to the next assignment.
+As soon as all assignments are done being processed the client thread is completely done with processing the expired event.</p>
+<p>This will be done for each client thread until all expired events are completely processed.
+At this point the master thread is complete and <code>runExpiredEvents.py</code>will not be triggered again until the next day at midnight, which will then do the same process for the previous day.</p>
 
 
     </article>

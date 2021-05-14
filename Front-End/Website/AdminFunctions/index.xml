@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submitter Documentation</title>
+    <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/</link>
+    <description>Recent content on Submitter Documentation</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/AccountCreation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/AccountCreation/</guid>
+      <description>Author: Jon Camarillo
+Last Update: May 2021
+We chose to not apply account creation to the project, but future developments may require such functionality and so, account-create.html could potentially be used as a template. We did modify the UI, but the &amp;lt;style&amp;gt; tag is included in the HTML - it is not contained in a separate file. The UI was simple enough, so we thought it unnecessary to do so. Future modifications may require a separate file.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateAssignment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateAssignment/</guid>
+      <description>Author: Jon Camarillo
+Last Updated: May 2021
+File name: assign.html
+One of the requirements of the project was to enable the user to create an assignment. The snapshot of the page contains the properties of the assignment that will then be stored in the database. For more info on {% crsf_token%}, refer to Django documentation here . Essentially, it is a security measure related to securing &amp;lt;form&amp;gt; data in the POST method that we use.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateEvent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateEvent/</guid>
+      <description>Author: Diego Gonzales
+Last Update: May 2021
+Admin is able to create an event for every assignment. This will include:
+ Event Name and Assignment name. Start Date and Due Date. Team Size Test Cases and Grade Cases.  This will be used to run with the python file that students submit.   List of student emails.  This will be used to send the students a message that an event has been created.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/Dashboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/Dashboard/</guid>
+      <description>Author: John Camarillo
+Last update: may 2021
+file name: dashboard.html
+The purpose of the dashboard was to display assignment information after one was selected from the drop-down menu as well as provide the user the ability to create a new assignment. When viewing the html file, you will notice elements contained in brackets. The use of brackets within the html file was a feature related to Django that allowed us to obtain and display assignment information stored in the database, such as the Event Name, Start Date, End Date, etc.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/login/</guid>
+      <description>Author: Jon Camarillo
+Last Updated: May 2021
+file: login.html
+The Admin Login page has not been fully implemented, but the structure of the page has been provdied in login.html. As was the case for the other html files, the &amp;lt;style&amp;gt; tag is not contained in a separate CSS file, and the &amp;lt;form&amp;gt; is can be easily modified. As it stands, the user is required to provide a username and password, otherwise the user will not be able to log in.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/ModifyEvent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/ModifyEvent/</guid>
+      <description>Author: Diego Gonzalez
+Last Update: May 9, 2021
+file: event-modify.html
+As of 5/9/2021, we are holding off on featuring the modification of events. However, the premise of the associated HTML file is such that admin is able to modify an event for every assignment. That is, the admin would be able to change any combination of properties related to an existing event. The admin will first choose which assignment they would like to modify, and then be taken to the same steps as create event.</description>
+    </item>
+    
+  </channel>
+</rss>

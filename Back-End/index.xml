@@ -26,5 +26,17 @@ Test Files     The files used for testing are:
 { &amp;quot;submissionid&amp;quot;: &amp;quot;fc55c0190dde2bc413d8d1e79fb8cca2&amp;quot;, &amp;quot;admin&amp;quot;: &amp;quot;m.soltys&amp;quot;, &amp;quot;event&amp;quot;: &amp;quot;aws labs&amp;quot;, &amp;quot;problem&amp;quot;: &amp;quot;lab 5 - containers&amp;quot;, &amp;quot;tokens&amp;quot;: [ &amp;quot;d823640ab3b0f7a4a2bc9fc89661e940&amp;quot;, &amp;quot;240669d4326dea48bba75e066b90b76f&amp;quot;, &amp;quot;4b31d568d86a9350d746c7c2fe9bf5c8&amp;quot; ] } </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>http://comp350spring2021.github.io/Back-End/ExpiredEvents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://comp350spring2021.github.io/Back-End/ExpiredEvents/</guid>
+      <description>How the back end takes care of expired events     Author: Rene Escamilla Last Update: May 2021
+It begins in the front end&amp;hellip;
+When an admin creates an event a .json file is generated and uploaded to the database. Each json file will contain the following:
+ eventID: A string identifier that is the name of the event. assignmentName: A string identifier that is the name of the assignment.</description>
+    </item>
+    
   </channel>
 </rss>

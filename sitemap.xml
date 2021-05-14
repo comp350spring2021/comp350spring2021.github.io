@@ -8,8 +8,6 @@
   </url><url>
     <loc>http://comp350spring2021.github.io/Infrastructure/</loc>
   </url><url>
-    <loc>http://comp350spring2021.github.io/CloudFormationDoc/</loc>
-  </url><url>
     <loc>http://comp350spring2021.github.io/FutureFeatures/</loc>
   </url><url>
     <loc>http://comp350spring2021.github.io/</loc>
@@ -18,19 +16,29 @@
   </url><url>
     <loc>http://comp350spring2021.github.io/Back-End/ExampleSubmissionJSON/</loc>
   </url><url>
+    <loc>http://comp350spring2021.github.io/Back-End/ExpiredEvents/</loc>
+  </url><url>
     <loc>http://comp350spring2021.github.io/Front-End/Django/</loc>
-  </url><url>
-    <loc>http://comp350spring2021.github.io/Front-End/Django/models.py/</loc>
-  </url><url>
-    <loc>http://comp350spring2021.github.io/Front-End/Django/Views.py/</loc>
   </url><url>
     <loc>http://comp350spring2021.github.io/Front-End/Website/</loc>
   </url><url>
-    <loc>http://comp350spring2021.github.io/Front-End/Website/CreateEvent/</loc>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/</loc>
   </url><url>
-    <loc>http://comp350spring2021.github.io/Front-End/Website/ModifyEvent/</loc>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/AccountCreation/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateAssignment/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/CreateEvent/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/Dashboard/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/login/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/AdminFunctions/ModifyEvent/</loc>
   </url><url>
     <loc>http://comp350spring2021.github.io/Front-End/Website/StudentSubmit/</loc>
+  </url><url>
+    <loc>http://comp350spring2021.github.io/Front-End/Website/TokenValidation/</loc>
   </url><url>
     <loc>http://comp350spring2021.github.io/Tutorials/</loc>
   </url><url>
